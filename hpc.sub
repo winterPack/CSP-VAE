@@ -1,0 +1,12 @@
+#! /bin/csh
+#BSUB -n 20
+#BSUB -W 5760
+#BSUB -R span[ptile=20]
+#BSUB -q brenner_ib
+#BSUB -o out.%J
+#BSUB -e err.%J
+##BSUB -x
+#BSUB -J pytorch
+
+source /gpfs_common/share02/dwb/dli18/virtualenv/tensorflow/bin/activate.csh
+python main.py
